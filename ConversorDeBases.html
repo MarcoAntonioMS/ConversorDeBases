@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ConversordeBases.css">
+    <title>Conversor de Bases</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Conversor de Bases</h1>
+            <p>Digite um número:</p>
+            <input class="text" id="ipt_numero" type="text"">
+        
+        <p>Qual a base do numero acima?</p>
+        <select id="sel_base" class="base">
+            <option value="#">Escolha um Número</option>
+            <option value="10">Decimal</option>
+            <option value="2">Binário</option>
+            <option value="8">Octal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+       
+        <button id="botao" onclick="converter()">Converter</button>
+        <div id="div_msg"></div>
+    </div>
+  
+    <script>
+        function converter() {
+            var numero = ipt_numero.value;
+            var base = sel_base.value;
+            var devolveDec = parseInt(numero, base)
+            var decimal = devolveDec.toString(10)
+            var binario = devolveDec.toString(2)
+            var octal = devolveDec.toString(8)
+            var hexadecimal = devolveDec.toString(16).toUpperCase()
+            if (binario == "NaN" || decimal == "NaN" || octal == "NaN" || hexadecimal == "NaN"){alert(`Por gentileza, insira um número válido ou mude a base do número escolhido :)`)
+                return
+            }
+             
+            if (base == "10") {
+                div_msg.innerHTML = `Resultado em binário: ${binario}<br>Resultado em octal: ${octal}<br>Resultado em hexadecimal: ${hexadecimal}<br>`}
+                if (base == "2") {
+                    div_msg.innerHTML = `Resultado em decimal: ${decimal}<br>Resultado em octal: ${octal}<br>Resultado em hexadecimal: ${hexadecimal}<br>`}
+                    if (base == "8") {
+                        div_msg.innerHTML = `Resultado em binário: ${binario}<br>Resultado em decimal: ${decimal}<br> Resultado em hexadecimal: ${hexadecimal}<br>`}
+                        if (base == "16") {
+                            div_msg.innerHTML = `Resultado em binário: ${binario}<br>Resultado em octal: ${octal}<br>Resultado em decimal: ${decimal}<br>`}
+        }
+    </script>
+</body>
