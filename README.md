@@ -10,6 +10,5 @@
 
 -- 5° Passo: Transfira os arquivos no diretório correspondente ao Apache.
 
--- 6° Passo: Inicie a conexão com o Servidor.
+-- 6° Passo: Inicie a conexão com o Servidor e Pronto para utilização.
 
---7° Passo: Pronto para utilização.
